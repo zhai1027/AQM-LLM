@@ -8,8 +8,8 @@ The goal of the L4S architecture is to enhance the congestion handling mechanism
 The logic of the L4S architecture for handling congestion is that when congestion occurs, the AQM will mark the packets in the queue (ECN marking), and when the server replies to the client's ACK packet with this marking signal, this signal will be used to alert the client to perform a speed reduction. After the client performs the speed reduction, the congestion will be improved. the AQM of L4A will divert the sent packets, one is called L4S queue and the other is called classic queue. Only the L4S queue will do ECN marking without dropping packets, while the classic queue will drop packets. the L4S queue will hardly drop packets, and will only start dropping packets if the congestion is so severe that ECN marking cannot be handled. the ECN is divided into 0, 1, and 3. when the ECN=3, it means that the congestion is occurring, and when the ECN=1 it means that the congestion is not occurring, while the ECN=0 means that the sub-packets are not occurring. L4S is not supported and cannot be tagged.
 
 Cient <----> Router <----> Server
-|              |
-|              |
+||             ||
+||             ||
 CCA           AQM
 
 CCA：Congestion control algorithm
