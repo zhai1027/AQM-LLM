@@ -41,12 +41,12 @@ There are several parts are changed to let AQM-LLM working with new exp pool fil
 # Environment Setup
 Create a conda environment for NetLLM:
 ```
-'conda create -n abr_netllm python>=3.8.10'
+conda create -n abr_netllm python>=3.8.10
  ```
 
 Activating the Conda environment
 ```
-'conda activate abr_netllm'
+conda activate abr_netllm
 ```
 
 Then install the following depdendencies one by one:
