@@ -1,0 +1,200 @@
+root@30265059cf90:/workspace/NetLLM/adaptive_bitrate_streaming# python run_plm.py --adapt --grad-accum-steps 32 --plm-type llama --plm-size base --rank 128 --device cuda:0 --device-out cuda:1 --lr 0.0001 --warmup-steps 2000 --num-epochs 20 --eval-per-epoch 2 --exp-pool-path ./exp_pool.pkl
+/usr/local/lib/python3.10/dist-packages/transformers/generation_utils.py:24: FutureWarning: Importing `GenerationMixin` from `src/transformers/generation_utils.py` is deprecated and will be removed in Transformers v5. Import as `from transformers import GenerationMixin` instead.
+  warnings.warn(
+Arguments:
+Namespace(exp_pool_path='./exp_pool.pkl', sample_step=None, trace='fcc-test', trace_num=100, video='video1', fixed_order=False, plm_type='llama', plm_size='base', rank=128, state_feature_dim=256, w=20, gamma=1.0, lr=0.0001, weight_decay=0.0001, warmup_steps=2000, num_epochs=20, eval_per_epoch=2, save_checkpoint_per_epoch=2, target_return_scale=1.0, which_layer=-1, adapt=True, test=False, grad_accum_steps=32, seed=100003, scale=1000, model_dir=None, device='cuda:0', device_out='cuda:1', device_mid=None)
+Loading traces from data/traces/test/fcc-test/
+Experience dataset info:
+Munch({'max_reward': 12.879270760483154, 'min_reward': 5.174370215368296, 'max_return': 2.4432051974533033, 'min_return': 0.00028438193121707746, 'min_timestep': 0, 'max_timestep': 4000, 'max_action': 3, 'min_action': 0})
+Loading checkpoint shards: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:52<00:00, 26.10s/it]
+normalizer.cc(51) LOG(INFO) precompiled_charsmap is empty. use identity normalization.
+If tokenizer is loaded:  [1, 22172, 3186]
+
+Step 0 - mean train loss  2.671555
+Step 100 - mean train loss  2.605886
+==================== Training Iteration #0 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 36.454089641571045,
+ 'training/train_loss_mean': 2.60054882645607,
+ 'training/train_loss_std': 0.30879591286596486}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/0
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 815.6250083446503}
+Step 0 - mean train loss  2.502200
+Step 100 - mean train loss  2.592697
+==================== Training Iteration #1 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.50653839111328,
+ 'training/train_loss_mean': 2.5848412704467774,
+ 'training/train_loss_std': 0.3049089244383705}
+Step 0 - mean train loss  2.676682
+Step 100 - mean train loss  2.534959
+==================== Training Iteration #2 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.902578353881836,
+ 'training/train_loss_mean': 2.5537556409835815,
+ 'training/train_loss_std': 0.2963510441338659}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/2
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 815.2306852340698}
+Step 0 - mean train loss  2.424623
+Step 100 - mean train loss  2.522924
+==================== Training Iteration #3 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.95568609237671,
+ 'training/train_loss_mean': 2.508144006729126,
+ 'training/train_loss_std': 0.2853306653250685}
+Step 0 - mean train loss  2.563123
+Step 100 - mean train loss  2.437647
+==================== Training Iteration #4 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.60062336921692,
+ 'training/train_loss_mean': 2.4466500741243364,
+ 'training/train_loss_std': 0.2687511519204649}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/4
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 817.1378750801086}
+Step 0 - mean train loss  2.276610
+Step 100 - mean train loss  2.392403
+==================== Training Iteration #5 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.77361083030701,
+ 'training/train_loss_mean': 2.370305946469307,
+ 'training/train_loss_std': 0.2506625195158986}
+Step 0 - mean train loss  2.374051
+Step 100 - mean train loss  2.279602
+==================== Training Iteration #6 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.97401738166809,
+ 'training/train_loss_mean': 2.2764819818735123,
+ 'training/train_loss_std': 0.22619131744228743}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/6
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 818.6211123466492}
+Step 0 - mean train loss  2.053667
+Step 100 - mean train loss  2.196703
+==================== Training Iteration #7 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.292052268981934,
+ 'training/train_loss_mean': 2.16637952208519,
+ 'training/train_loss_std': 0.2015431572827822}
+Step 0 - mean train loss  2.097524
+Step 100 - mean train loss  2.054238
+==================== Training Iteration #8 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 32.58945441246033,
+ 'training/train_loss_mean': 2.035681740641594,
+ 'training/train_loss_std': 0.17172120439408942}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/8
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 819.8168466091156}
+Step 0 - mean train loss  1.742470
+Step 100 - mean train loss  1.926321
+==================== Training Iteration #9 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 35.43999147415161,
+ 'training/train_loss_mean': 1.8862064057588577,
+ 'training/train_loss_std': 0.14769785948236794}
+Step 0 - mean train loss  1.711000
+Step 100 - mean train loss  1.751157
+==================== Training Iteration #10 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 36.08155632019043,
+ 'training/train_loss_mean': 1.7128286153078078,
+ 'training/train_loss_std': 0.13789922626765513}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/10
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 817.1711385250092}
+Step 0 - mean train loss  1.314575
+Step 100 - mean train loss  1.572283
+==================== Training Iteration #11 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 32.19495415687561,
+ 'training/train_loss_mean': 1.5220528590679168,
+ 'training/train_loss_std': 0.1640806156915846}
+Step 0 - mean train loss  1.191249
+Step 100 - mean train loss  1.374330
+==================== Training Iteration #12 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 33.24771070480347,
+ 'training/train_loss_mean': 1.3144806697964668,
+ 'training/train_loss_std': 0.24529624685229098}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/12
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 819.9533543586731}
+Step 0 - mean train loss  0.741780
+Step 100 - mean train loss  1.169913
+==================== Training Iteration #13 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 33.105406522750854,
+ 'training/train_loss_mean': 1.119441441297531,
+ 'training/train_loss_std': 0.37534665540840195}
+Step 0 - mean train loss  0.548189
+Step 100 - mean train loss  1.040307
+==================== Training Iteration #14 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 33.664698123931885,
+ 'training/train_loss_mean': 0.9751297190785408,
+ 'training/train_loss_std': 0.5956742899314209}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/14
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 821.2161159515381}
+Step 0 - mean train loss  0.233837
+Step 100 - mean train loss  0.965430
+==================== Training Iteration #15 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 33.53232526779175,
+ 'training/train_loss_mean': 0.9469346351921558,
+ 'training/train_loss_std': 0.8412665058417097}
+Step 0 - mean train loss  0.177732
+Step 100 - mean train loss  1.047759
+==================== Training Iteration #16 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 33.987457275390625,
+ 'training/train_loss_mean': 0.9677742600813508,
+ 'training/train_loss_std': 1.0366528171559581}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/16
+>>>>>>>>>> Evaluation Information
+{'best_return': 0.0,
+ 'episodes_len': 4700,
+ 'episodes_return': 0.0,
+ 'time/evaluation': 822.222252368927}
+Step 0 - mean train loss  0.125052
+Step 100 - mean train loss  1.001319
+==================== Training Iteration #17 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 32.412389039993286,
+ 'training/train_loss_mean': 0.966722112223506,
+ 'training/train_loss_std': 1.1421725996011538}
+Step 0 - mean train loss  0.154753
+Step 100 - mean train loss  1.055281
+==================== Training Iteration #18 ====================
+>>>>>>>>>> Training Information:
+{'time/training': 34.182000160217285,
+ 'training/train_loss_mean': 0.9514163024351001,
+ 'training/train_loss_std': 1.1972413642361242}
+Checkpoint saved at: data/ft_plms/llama_base/._ss_None/rank_128_w_20_gamma_1.0_sfd_256_lr_0.0001_wd_0.0001_warm_2000_epochs_20_seed_100003/early_stop_-1_checkpoint/18
