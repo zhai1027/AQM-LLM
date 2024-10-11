@@ -40,12 +40,12 @@ There are several parts are changed to let AQM-LLM working with new exp pool fil
 
 # Environment Setup
 Create a conda environment for NetLLM:
-```bash
+```
 'conda create -n abr_netllm python>=3.8.10'
- 
+ ```
 
 Activating the Conda environment
-```bash
+
 'conda activate abr_netllm'
  
 
@@ -61,7 +61,7 @@ peft==0.6.2
 '''
 
 Or use this:
-```bash
+
 python -m pip install --upgrade pip && pip install openprompt==1.0.1 && pip install numpy==1.24.4 && pip install peft==0.6.2 && pip install transformers==4.34.1 && pip install --upgrade huggingface_hub && pip install scikit-learn && pip install munch
  
 
@@ -70,19 +70,19 @@ To run NetLLM, first we need to download some LLMs. For example, if you want to 
 
 ## Finetune LLM
 If you want to finetune LLM, please run the following command. The number after --num-epochs specifies how many times the model needs to be run in its entirety on the training dataset:
-```bash
+
 python run_plm.py --adapt --grad-accum-steps 32 --plm-type llama --plm-size base --rank 128 --device cuda:0 --device-out cuda:1 --lr 0.0001 --warmup-steps 2000 --num-epochs 20 --eval-per-epoch 2 --exp-pool-path ./exp_pool.pkl
  
 Reminder: After installing every environmental configurations, if there is anything you missed, at this stage the terminal will warn you and provide the missing part.
 
 ## Test LLM
 在训练后的LLM需要重新调整run_plm.py，请使用run_plm_for_testing.py用于训练，目前如何整合run_plm和run_plm_for_testing仍在解决中，只有测试LLM时才会用上run_plm_for_testing.py。
-```bash
+
 python run_plm.py --test --grad-accum-steps 32 --plm-type llama --plm-size base --rank 128 --device cuda:0 --device-out cuda:1 --lr 0.0001 --warmup-steps 2000 --num-epochs 20 --eval-per-epoch 2 --exp-pool-path ./exp_pool.pkl
  
 
 Or use your own address
-```bash
+
 python run_plm.py --test --grad-accum-steps 32 --plm-type llama --plm-size base --rank 128 --device cuda:0 --device-out cuda:1 --lr 0.0001 --warmup-steps 2000 --num-epochs 20 --eval-per-epoch 2 --exp-pool-path your_exp_pool_path
 
 
