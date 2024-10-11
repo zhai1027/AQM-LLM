@@ -1,7 +1,7 @@
 # AQM-LLM
 AQM-LLM is developed based on [NetLLM Architecture + Llama2] and is applicable to LLM with L4S architecture.
 
-Background：
+# Background
 Definition of L4S Architecture: Low Latency, Low Loss, and Scalable Throughput (L4S) Internet Service: Architecture. Link: https://datatracker.ietf.org/doc/rfc9330/
 The goal of the L4S architecture is to enhance the congestion handling mechanisms in traditional TCP networks and to allow low latency, high throughput behavior between clients and servers that support the L4S architecture.Communication in the L4S architecture simply involves 2 components: congestion control algorithms and active queue management. The congestion control algorithm exists on the client side and the active queue management exists in the router. The congestion control algorithm is TCP's algorithm for avoiding network congestion and is one of the main congestion control measures on the Internet, whereas active queue management (AQM) is a policy that discards packets in a network interface controller (NIC) associated buffer before that buffer becomes full, usually with the goal of reducing network congestion or improving end-to-end latency.
 
@@ -10,7 +10,7 @@ The logic of the L4S architecture for handling congestion is that when congestio
 CCA：Congestion control algorithm
 AQM：Active queue management
 
-Motivation：
+# Motivation
 The L4S architecture has the obvious advantage of allowing packets in the L4S queue to be marked when congestion occurs, and then the client will slow down after receiving an ACK alert from the server. However, it was found that the L4S architecture's approach to congestion handling is similar to “passive congestion handling”, in other words, “adjust the traffic signal when there is a traffic jam”. This passive congestion handling method only performs ECN marking when congestion occurs, and it is hoped that the L4S architecture can be improved by means of a large-scale language model, especially in terms of congestion handling. So a hypothesis is proposed: predicting network events is achieved by LLM, and ECNs are labeled in advance before the impending congestion occurs. e.g., at the actual congestion occurrence time of t=1.5, labeling at t=1.3 seconds can be achieved with the addition of LLM.
 
 Experimental setup：
