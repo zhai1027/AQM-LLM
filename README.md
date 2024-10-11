@@ -1,6 +1,11 @@
 # AQM-LLM
 AQM-LLM is developed based on [NetLLM Architecture + Llama2] and is applicable to LLM with L4S architecture.
 
+# NetLLM
+https://github.com/duowuyms/NetLLM.git
+# L4S
+https://github.com/L4STeam
+
 # Background
 Definition of L4S Architecture: Low Latency, Low Loss, and Scalable Throughput (L4S) Internet Service: Architecture. Link: https://datatracker.ietf.org/doc/rfc9330/
 The goal of the L4S architecture is to enhance the congestion handling mechanisms in traditional TCP networks and to allow low latency, high throughput behavior between clients and servers that support the L4S architecture.Communication in the L4S architecture simply involves 2 components: congestion control algorithms and active queue management. The congestion control algorithm exists on the client side and the active queue management exists in the router. The congestion control algorithm is TCP's algorithm for avoiding network congestion and is one of the main congestion control measures on the Internet, whereas active queue management (AQM) is a policy that discards packets in a network interface controller (NIC) associated buffer before that buffer becomes full, usually with the goal of reducing network congestion or improving end-to-end latency.
