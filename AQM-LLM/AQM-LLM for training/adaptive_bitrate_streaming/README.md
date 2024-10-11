@@ -1,10 +1,5 @@
 # Preface
-The codes for adaptive bitrate streaming (ABR) are implemented based on the repository of [Genet](https://github.com/GenetProject/Genet/tree/main). Thanks for Genet's authors for their open source codes!
-
-What is ABR?
-> The volume of video streaming has reached almost 60% of all the Internet traffic. Streaming video over variable-bandwidth networks (e.g., cellular network) requires the client to adapt the video bitrate to optimize the user experience. In industrial DASH standard, videos are
-divided into multiple chunks, each of which represents a few seconds of the overall video playback. Each chunk is encoded at several discrete bitrates, where a higher bitrate implies a higher resolution and thus a larger chunk size. For this problem, each MDP episode is a video playback with a particular network trace (i.e., a time series of network throughput). At each step, the agent observes the past network throughput measurement, the current video buffer size, and the remaining portion of the video. The action is the bitrate for the next video chunk. The objective is to maximize the video resolution and minimize the stall (which occurs when download time of a chunk is larger than the current buffer size) and the reward
-is structured to be a linear combination of selected bitrate and the stall when downloading the corresponding chunk.
+The code for this project is revised which is based on the [NetLLM](https://github.com/duowuyms/NetLLM.git) repository.
 
 # Code Structure
 - `artifacts`: This directory stores some artifacts, e.g., result files.
