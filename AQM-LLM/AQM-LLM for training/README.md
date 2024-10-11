@@ -1,5 +1,5 @@
 # Preface
-
+The code for this project is revised which is based on the [NetLLM](https://github.com/duowuyms/NetLLM.git) repository.
 
 # Code Structure
 - `artifacts`: This directory stores some artifacts, e.g., result files.
