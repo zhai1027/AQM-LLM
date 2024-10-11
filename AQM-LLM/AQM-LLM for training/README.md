@@ -36,7 +36,7 @@ There are several parts are changed to let AQM-LLM working with new exp pool fil
 - `run_plm.py`
 - `state_encoder.py`
 - `rl_policy.py`
-- 'exp_pool.pkl'
+- `exp_pool.pkl`
 
 # Environment Setup
 Create a conda environment for NetLLM:
