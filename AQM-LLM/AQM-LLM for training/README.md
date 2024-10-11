@@ -86,6 +86,10 @@ Or use your own address
 python run_plm.py --test --grad-accum-steps 32 --plm-type llama --plm-size base --rank 128 --device cuda:0 --device-out cuda:1 --lr 0.0001 --warmup-steps 2000 --num-epochs 20 --eval-per-epoch 2 --exp-pool-path your_exp_pool_path
 '''
 
+To run the experience pool code, use the following command:
+
+```bash
+python my_exp_pool_code.py
 
 
 
